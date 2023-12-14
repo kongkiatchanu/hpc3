@@ -97,7 +97,7 @@ $(function () {
                         title = value.us_title;
                         dustboy_icon = value.us_dustboy_icon;
                         //////////////////////////////////////////////////////////////
-                        if($.inArray(parseInt(value.id), ar_indoor) == -1) {
+                        if($.inArray(parseInt(value.id), ar_indoor) != -1) {
                         marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
                             icon: L.divIcon({
                                 className: "custom_marker",
