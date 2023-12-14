@@ -9,38 +9,38 @@ $(function () {
         }
         $('.aqi .dropdown-item').on('click', function (e) {
             
-            var data_index = $(this).attr('data-index');
-            var name_index = $(this).html();
-            $('.aqi .dropdown-toggle').html('<span class="fade_in_ture"> ' + name_index + ' </span>');
-            if(data_index =='th-hr'){
-                if($('.cate_th').css('display') == 'none'){
-                    $('.cate_us').hide();
-                    $('.cate_us_daily').hide();
-                    $('.cate_th').show();
-                    $('.cate_th_daily').hide();
-                }
-            }else if(data_index =='th-dy'){
-                if($('.cate_th_daily').css('display') == 'none'){
-                    $('.cate_us').hide();
-                    $('.cate_us_daily').hide();
-                    $('.cate_th').hide();
-                    $('.cate_th_daily').show();
-                }
-            }else if(data_index =='us-hr'){
-                if($('.cate_us').css('display') == 'none'){
-                    $('.cate_us').show();
-                    $('.cate_us_daily').hide();
-                    $('.cate_th').hide();
-                    $('.cate_th_daily').hide();
-                }
-            }else if(data_index =='us-dy'){
-                if($('.cate_us_daily').css('display') == 'none'){
-                    $('.cate_us').hide();
-                    $('.cate_us_daily').show();
-                    $('.cate_th').hide();
-                    $('.cate_th_daily').hide();
-                }
-            }
+            // var data_index = $(this).attr('data-index');
+            // var name_index = $(this).html();
+            // $('.aqi .dropdown-toggle').html('<span class="fade_in_ture"> ' + name_index + ' </span>');
+            // if(data_index =='th-hr'){
+            //     if($('.cate_th').css('display') == 'none'){
+            //         $('.cate_us').hide();
+            //         $('.cate_us_daily').hide();
+            //         $('.cate_th').show();
+            //         $('.cate_th_daily').hide();
+            //     }
+            // }else if(data_index =='th-dy'){
+            //     if($('.cate_th_daily').css('display') == 'none'){
+            //         $('.cate_us').hide();
+            //         $('.cate_us_daily').hide();
+            //         $('.cate_th').hide();
+            //         $('.cate_th_daily').show();
+            //     }
+            // }else if(data_index =='us-hr'){
+            //     if($('.cate_us').css('display') == 'none'){
+            //         $('.cate_us').show();
+            //         $('.cate_us_daily').hide();
+            //         $('.cate_th').hide();
+            //         $('.cate_th_daily').hide();
+            //     }
+            // }else if(data_index =='us-dy'){
+            //     if($('.cate_us_daily').css('display') == 'none'){
+            //         $('.cate_us').hide();
+            //         $('.cate_us_daily').show();
+            //         $('.cate_th').hide();
+            //         $('.cate_th_daily').hide();
+            //     }
+            // }
             // $('.aqi .dropdown-item').removeClass('active');
             // $(this).addClass('active');
             // $('#popupDetail').hide();
