@@ -3,9 +3,9 @@ $(function () {
         var width_window = $(window).width();
         var zoom_map;
         if (width_window < 1600) {
-            zoom_map = 13;
+            zoom_map = 8;
         } else {
-            zoom_map = 13;
+            zoom_map = 8;
         }
         $('.aqi .dropdown-item').on('click', function (e) {
             var data_index = $(this).attr('data-index');
