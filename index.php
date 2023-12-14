@@ -71,7 +71,7 @@
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="us_aqi" role="tabpanel">
                                 <div id="us_map" class="fade_in_ture anime_delay05">
-                                    <div class="leaflet-top leaflet-right">
+                                    <!-- <div class="leaflet-top leaflet-right">
                                         <div class="leaflet-control-layers leaflet-control custom-layout">
                                             <a class="leaflet-control-layers-toggle safety-button" data-toggle="tooltip" data-placement="left" title="Safety zone" style="display: none">
                                                 <img src="assets/image/safety_icon.png" alt="safety zone">
@@ -80,7 +80,7 @@
                                                 <img src="assets/image/house.png" alt="Indoor" width="20">
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="pm_aqi cate_us">
                                     <div class="pm fade_in_ture anime_delay1">
