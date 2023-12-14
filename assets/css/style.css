@@ -128,7 +128,7 @@ html, body {
 }
 
 #btn_contact.open span {
-  background: #ffffff;
+  background: #000;
 }
 
 #btn_contact.open span:nth-child(2) {
@@ -746,7 +746,7 @@ section#contact .logo_contact img {
 
 section#contact .logo_contact img.local_contact {
   width: 250px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 section#contact .menu_contact {
