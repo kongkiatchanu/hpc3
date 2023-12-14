@@ -195,7 +195,7 @@ $(function () {
                                 if($.inArray(parseInt(value.id), ar_indoor) != -1) {
                                     if(category=='th-hr'||category=='us-hr')
                                     {
-                                        var marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
+                                        marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
                                             icon: L.divIcon({
                                                 className: "custom_marker",
                                                 iconSize: [35, 35],
@@ -210,7 +210,7 @@ $(function () {
                                     {
                                         if(value.source_name == 'DustBoy')
                                         {
-                                         var marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
+                                            marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
                                                 icon: L.divIcon({
                                                     className: "custom_marker",
                                                     iconSize: [35, 35],
