@@ -26,15 +26,15 @@
                 <div class="line d-block d-lg-none"></div>
                 <div class="contact col-12 offset-md-1 col-md-6 offset-lg-0 col-lg-7 mt-3">
                     <div class="row">
-                        <div class="col-12 text-light">
+                        <div class="col-12 text-dark">
                             <h4><?= $contact_title ?></h4>
                             <p><?= $contact_detail ?></p> 
                         </div>
                     </div>
                 </div>
                 <div class="contact col-12 col-md-5 offset-lg-0 col-lg-5 pl-4">
-                    <p class="text-white contact_us">ติดต่อ</p>
-                    <p class="group_icon text-white">
+                    <p class="text-dark contact_us">ติดต่อ</p>
+                    <p class="group_icon text-dark">
                         <?php if(isset($facebook)){ ?>
                             <a href="<?=$facebook?>" class="icon mr-3" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26"
