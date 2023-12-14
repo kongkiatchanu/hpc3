@@ -8,6 +8,7 @@ $(function () {
             zoom_map = 8;
         }
         $('.aqi .dropdown-item').on('click', function (e) {
+            console.log('call')
             var data_index = $(this).attr('data-index');
             var name_index = $(this).html();
             $('.aqi .dropdown-toggle').html('<span class="fade_in_ture"> ' + name_index + ' </span>');
