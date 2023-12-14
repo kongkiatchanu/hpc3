@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="logo_contact col-12 col-lg-4">
-                <img class="local_contact shadow-drop-bottom" src="assets/image/<?= $icon; ?>" alt="">
+                <img class="local_contact" src="assets/image/<?= $icon; ?>" alt="">
             </div>
             <div class="menu_contact col-12 col-lg-8">
                 <div class="menu_min col-12 d-sm-block d-md-block d-lg-none">
