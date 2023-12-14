@@ -222,7 +222,7 @@ section#main .header .menu .main_menu .nav .nav-item .nav-link {
 }
 
 section#main .header .menu .main_menu .nav .nav-item .nav-link:hover {
-  color: #ac76b7;
+  color: #fefefe;
 }
 
 section#main .header .menu .main_menu .nav .nav-item .line_active {
@@ -430,9 +430,9 @@ section#main .main_content .map .bg_map #pm25_map .leaflet-control-layers, secti
 }
 
 section#main .main_content .map .bg_map #pm25_map path.leaflet-interactive, section#main .main_content .map .bg_map #us_map path.leaflet-interactive {
-  stroke: #ac76b7;
+  stroke: #fefefe;
   stroke-width: 2;
-  fill: #ac76b7;
+  fill: #fefefe;
   fill-opacity: 0.1;
 }
 
@@ -721,7 +721,7 @@ section#contact {
   width: 100%;
   height: 100vh;
   z-index: 0;
-  background: #ac76b7;
+  background: #fefefe;
 }
 
 section#contact .logo_contact, section#contact .menu_contact, section#contact .footer {
@@ -806,7 +806,7 @@ section#contact .menu_contact .contact .group_icon {
 section#contact .menu_contact .contact .group_icon a.icon {
   width: 50px;
   height: 50.72px;
-  background: #ffffff;
+  background: #333;
   border-radius: 50%;
   padding: .75rem .75rem;
   text-align: center;
@@ -815,12 +815,12 @@ section#contact .menu_contact .contact .group_icon a.icon {
 }
 
 section#contact .menu_contact .contact .group_icon a.icon svg g g {
-  fill: #ac76b7;
+  fill: #fefefe;
 }
 
 section#contact .menu_contact .contact .group_icon a.icon i {
   width: 26px;
-  color: #ac76b7;
+  color: #fefefe;
   font-size: 26px;
 }
 
@@ -867,7 +867,7 @@ footer {
   position: fixed;
   bottom: 0;
   z-index: 999;
-  background: #ac76b7;
+  background: #fefefe;
   color: #ffffff;
   text-align: center;
   font-size: 12px;
