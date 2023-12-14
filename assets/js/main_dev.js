@@ -160,142 +160,142 @@ $(function () {
                             });
                         }
                         //category
-                        $('.aqi .dropdown-item').on('click', function (e) {
-                            var category = $(this).attr('data-index');
-                                var number_title,footeraqi;
-                                //hr/dy
-                                if(category == 'th-hr'|| category == 'us-hr'){
-                                    number_title = Math.floor(parseFloat(value.pm25));
-                                    footer25 = value.pm25;
-                                }else{
-                                    number_title = Math.floor(parseFloat(value.daily_pm25));
-                                    footer25 = value.daily_pm25;
-                                    if(category == 'th-dy') footeraqi = value.daily_pm25_th_aqi;
-                                    else footeraqi = value.daily_pm25_us_aqi;
-                                }
-                                var marker_color,marker_icon,forecast_aqi;
-                                if (category == 'th-hr') {
-                                    marker_color = value.th_color;
-                                    marker_icon  = value.th_dustboy_icon
-                                    forecast_aqi = 'th'
-                                } else if (category == 'th-dy'){
-                                    marker_color = value.daily_th_color;
-                                    marker_icon  = value.daily_th_dustboy_icon
-                                    forecast_aqi = 'th'
-                                } else if (category == 'us-hr'){
-                                    marker_color = value.us_color;
-                                    marker_icon  = value.us_dustboy_icon
-                                    forecast_aqi = 'us'
-                                } else if (category == 'us-dy'){
-                                    marker_color = value.daily_us_color;
-                                    marker_icon  = value.daily_us_dustboy_icon
-                                    forecast_aqi = 'us'
-                                }
-                                map.removeLayer(marker);
-                                if($.inArray(parseInt(value.id), ar_indoor) != -1) {
-                                    if(category=='th-hr'||category=='us-hr')
-                                {
-                                    marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
-                                        icon: L.divIcon({
-                                            className: "custom_marker",
-                                            iconSize: [35, 35],
-                                            iconAnchor: [0, 0],
-                                            labelAnchor: [-6, 0],
-                                            popupAnchor: [17, 0],
-                                            html: '<div class="custom_marker slit_in_vertical" style="background-color:rgba(' + marker_color + ')">' + number_title + '</div>'
-                                        })
-                                    }).addTo(map);
-                                }
-                                else if(category=='th-dy'||category=='us-dy')
-                                {
-                                    if(value.source_name == 'DustBoy')
-                                    {
-                                        marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
-                                            icon: L.divIcon({
-                                                className: "custom_marker",
-                                                iconSize: [35, 35],
-                                                iconAnchor: [0, 0],
-                                                labelAnchor: [-6, 0],
-                                                popupAnchor: [17, 0],
-                                                html: '<div class="custom_marker slit_in_vertical" style="background-color:rgba(' + marker_color + ')">' + number_title + '</div>'
-                                            })
-                                        }).addTo(map);
-                                    }
-                                }
-                                marker.on('click', function (e) {
-                                    var lang = Cookies.get("lang_cookie");
-                                    //pm2.5/TH AQI
-                                    var lang = Cookies.get("lang_cookie");
-                                    if (lang == 'EN') {
-                                        moment.locale('en');
-                                        var time_date = moment(value.log_datetime).format('ll');
-                                        var time_time = moment(value.log_datetime).format('LT');
-                                    } else {
-                                        moment.locale('th');
-                                        var time_date = moment(value.log_datetime).format('ll');
-                                        var time_time = moment(value.log_datetime).format('LT') + ' น.';
-                                    }
-                                    // $('.time').html('<i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time);
-                                    $('.prophecy').html('<a class="float-left" onclick="chart_forcast('+value.id+',\''+forecast_aqi+'\',\''+ value.dustboy_name +'\');" style="color:#fff;"><i class="fas fa-cloud-sun"></i></a>');
-                                    $('.time').html('<span class=""><i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time +'</span>');
-                                    $('.info').html('<a class="float-right" href="https://www.cmuccdc.org/'+ value.dustboy_uri +'" style="color:#fff;" target="_blank"><i class="fas fa-info-circle"></i></a>');
-                                    //pm2.5/US AQI
-                                    if (lang == 'EN') {
-                                        $('#popupDetail .card-header p').html(value.dustboy_name_en);
-                                        if (category == 'th-hr') {
-                                            $('#popupDetail .detail_title').html(value.th_title_en);
-                                        }else if (category == 'th-dy'){
-                                            $('#popupDetail .detail_title').html(value.daily_th_title_en);
-                                        }else if (category == 'us-hr'){
-                                            $('#popupDetail .detail_title').html(value.us_title_en);
-                                        }else if (category == 'us-dy'){
-                                            $('#popupDetail .detail_title').html(value.daily_us_title_en);
-                                        }
-                                    } else {
-                                        $('#popupDetail .card-header p').html(value.dustboy_name);
-                                        if (category == 'th-hr') {
-                                            $('#popupDetail .detail_title').html(value.th_title);
-                                        }else if (category == 'th-dy'){
-                                            $('#popupDetail .detail_title').html(value.daily_th_title);
-                                        }else if (category == 'us-hr'){
-                                            $('#popupDetail .detail_title').html(value.us_title);
-                                        }else if (category == 'us-dy'){
-                                            $('#popupDetail .detail_title').html(value.daily_us_title);
-                                        }
-                                    }
-                                    $('#popupDetail .number_title').html(number_title);
-                                    $('#popupDetail .number_footer').html('μg/m<sup>3</sup>');
-                                    $('#popupDetail .card-header').css("background-color", "rgba(" + marker_color + ")");
-                                    $('#popupDetail .card-body').css("background-color", "rgba(" + marker_color + ")");
-                                    $('#popupDetail .card-footer').css("background-color", "rgba(" + marker_color + ")");
-                                    if (category == 'us-hr'||category == 'us-dy') {
-                                        if(marker_icon == 'us-dust-boy-01') marker_icon = 'us-dust-boy-01';
-                                        else if(marker_icon == 'us-dust-boy-02') marker_icon = 'us-dust-boy-02';
-                                        else if(marker_icon == 'us-dust-boy-03') marker_icon = 'us-dust-boy-03';
-                                        else if(marker_icon == 'us-dust-boy-04') marker_icon = 'us-dust-boy-04';
-                                        else if(marker_icon == 'us-dust-boy-05') marker_icon = 'us-dust-boy-05';
-                                        else if(marker_icon == 'us-dust-boy-06') marker_icon = 'us-dust-boy-06';
-                                    }else if(category == 'th-hr'||category == 'th-dy'){
-                                        if(marker_icon == 'th-dust-boy-01') marker_icon = 'th-dust-boy-01';
-                                        else if(marker_icon == 'th-dust-boy-02') marker_icon = 'th-dust-boy-02';
-                                        else if(marker_icon == 'th-dust-boy-03') marker_icon = 'th-dust-boy-03';
-                                        else if(marker_icon == 'th-dust-boy-04') marker_icon = 'th-dust-boy-04';
-                                        else if(marker_icon == 'th-dust-boy-05') marker_icon = 'th-dust-boy-05';
-                                    }
-                                    // $('#popupDetail .card-body .anime img').attr("src", 'https://dev2.cmuccdc.org/template/image/' + marker_icon + '.svg');
-                                    $('#popupDetail .card-body .anime img').attr("src", 'https://pm2_5.nrct.go.th/template/image/' + marker_icon + '.svg');
-                                    if(category == 'th-dy'|| category == 'us-dy'){
-                                        $('#popupDetail .card-footer .foot_aqi').html("PM<sub>2.5</sub> AQI " + footeraqi);
-                                        $('#popupDetail .card-footer .foot_aqi').show();
-                                    }else{
-                                        $('#popupDetail .card-footer .foot_aqi').hide();
-                                    }
-                                    $('#popupDetail').show();
-                                });
-                                }
+                        // $('.aqi .dropdown-item').on('click', function (e) {
+                        //     var category = $(this).attr('data-index');
+                        //         var number_title,footeraqi;
+                        //         //hr/dy
+                        //         if(category == 'th-hr'|| category == 'us-hr'){
+                        //             number_title = Math.floor(parseFloat(value.pm25));
+                        //             footer25 = value.pm25;
+                        //         }else{
+                        //             number_title = Math.floor(parseFloat(value.daily_pm25));
+                        //             footer25 = value.daily_pm25;
+                        //             if(category == 'th-dy') footeraqi = value.daily_pm25_th_aqi;
+                        //             else footeraqi = value.daily_pm25_us_aqi;
+                        //         }
+                        //         var marker_color,marker_icon,forecast_aqi;
+                        //         if (category == 'th-hr') {
+                        //             marker_color = value.th_color;
+                        //             marker_icon  = value.th_dustboy_icon
+                        //             forecast_aqi = 'th'
+                        //         } else if (category == 'th-dy'){
+                        //             marker_color = value.daily_th_color;
+                        //             marker_icon  = value.daily_th_dustboy_icon
+                        //             forecast_aqi = 'th'
+                        //         } else if (category == 'us-hr'){
+                        //             marker_color = value.us_color;
+                        //             marker_icon  = value.us_dustboy_icon
+                        //             forecast_aqi = 'us'
+                        //         } else if (category == 'us-dy'){
+                        //             marker_color = value.daily_us_color;
+                        //             marker_icon  = value.daily_us_dustboy_icon
+                        //             forecast_aqi = 'us'
+                        //         }
+                        //         map.removeLayer(marker);
+                        //         if($.inArray(parseInt(value.id), ar_indoor) != -1) {
+                        //             if(category=='th-hr'||category=='us-hr')
+                        //         {
+                        //             marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
+                        //                 icon: L.divIcon({
+                        //                     className: "custom_marker",
+                        //                     iconSize: [35, 35],
+                        //                     iconAnchor: [0, 0],
+                        //                     labelAnchor: [-6, 0],
+                        //                     popupAnchor: [17, 0],
+                        //                     html: '<div class="custom_marker slit_in_vertical" style="background-color:rgba(' + marker_color + ')">' + number_title + '</div>'
+                        //                 })
+                        //             }).addTo(map);
+                        //         }
+                        //         else if(category=='th-dy'||category=='us-dy')
+                        //         {
+                        //             if(value.source_name == 'DustBoy')
+                        //             {
+                        //                 marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
+                        //                     icon: L.divIcon({
+                        //                         className: "custom_marker",
+                        //                         iconSize: [35, 35],
+                        //                         iconAnchor: [0, 0],
+                        //                         labelAnchor: [-6, 0],
+                        //                         popupAnchor: [17, 0],
+                        //                         html: '<div class="custom_marker slit_in_vertical" style="background-color:rgba(' + marker_color + ')">' + number_title + '</div>'
+                        //                     })
+                        //                 }).addTo(map);
+                        //             }
+                        //         }
+                        //         marker.on('click', function (e) {
+                        //             var lang = Cookies.get("lang_cookie");
+                        //             //pm2.5/TH AQI
+                        //             var lang = Cookies.get("lang_cookie");
+                        //             if (lang == 'EN') {
+                        //                 moment.locale('en');
+                        //                 var time_date = moment(value.log_datetime).format('ll');
+                        //                 var time_time = moment(value.log_datetime).format('LT');
+                        //             } else {
+                        //                 moment.locale('th');
+                        //                 var time_date = moment(value.log_datetime).format('ll');
+                        //                 var time_time = moment(value.log_datetime).format('LT') + ' น.';
+                        //             }
+                        //             // $('.time').html('<i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time);
+                        //             $('.prophecy').html('<a class="float-left" onclick="chart_forcast('+value.id+',\''+forecast_aqi+'\',\''+ value.dustboy_name +'\');" style="color:#fff;"><i class="fas fa-cloud-sun"></i></a>');
+                        //             $('.time').html('<span class=""><i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time +'</span>');
+                        //             $('.info').html('<a class="float-right" href="https://www.cmuccdc.org/'+ value.dustboy_uri +'" style="color:#fff;" target="_blank"><i class="fas fa-info-circle"></i></a>');
+                        //             //pm2.5/US AQI
+                        //             if (lang == 'EN') {
+                        //                 $('#popupDetail .card-header p').html(value.dustboy_name_en);
+                        //                 if (category == 'th-hr') {
+                        //                     $('#popupDetail .detail_title').html(value.th_title_en);
+                        //                 }else if (category == 'th-dy'){
+                        //                     $('#popupDetail .detail_title').html(value.daily_th_title_en);
+                        //                 }else if (category == 'us-hr'){
+                        //                     $('#popupDetail .detail_title').html(value.us_title_en);
+                        //                 }else if (category == 'us-dy'){
+                        //                     $('#popupDetail .detail_title').html(value.daily_us_title_en);
+                        //                 }
+                        //             } else {
+                        //                 $('#popupDetail .card-header p').html(value.dustboy_name);
+                        //                 if (category == 'th-hr') {
+                        //                     $('#popupDetail .detail_title').html(value.th_title);
+                        //                 }else if (category == 'th-dy'){
+                        //                     $('#popupDetail .detail_title').html(value.daily_th_title);
+                        //                 }else if (category == 'us-hr'){
+                        //                     $('#popupDetail .detail_title').html(value.us_title);
+                        //                 }else if (category == 'us-dy'){
+                        //                     $('#popupDetail .detail_title').html(value.daily_us_title);
+                        //                 }
+                        //             }
+                        //             $('#popupDetail .number_title').html(number_title);
+                        //             $('#popupDetail .number_footer').html('μg/m<sup>3</sup>');
+                        //             $('#popupDetail .card-header').css("background-color", "rgba(" + marker_color + ")");
+                        //             $('#popupDetail .card-body').css("background-color", "rgba(" + marker_color + ")");
+                        //             $('#popupDetail .card-footer').css("background-color", "rgba(" + marker_color + ")");
+                        //             if (category == 'us-hr'||category == 'us-dy') {
+                        //                 if(marker_icon == 'us-dust-boy-01') marker_icon = 'us-dust-boy-01';
+                        //                 else if(marker_icon == 'us-dust-boy-02') marker_icon = 'us-dust-boy-02';
+                        //                 else if(marker_icon == 'us-dust-boy-03') marker_icon = 'us-dust-boy-03';
+                        //                 else if(marker_icon == 'us-dust-boy-04') marker_icon = 'us-dust-boy-04';
+                        //                 else if(marker_icon == 'us-dust-boy-05') marker_icon = 'us-dust-boy-05';
+                        //                 else if(marker_icon == 'us-dust-boy-06') marker_icon = 'us-dust-boy-06';
+                        //             }else if(category == 'th-hr'||category == 'th-dy'){
+                        //                 if(marker_icon == 'th-dust-boy-01') marker_icon = 'th-dust-boy-01';
+                        //                 else if(marker_icon == 'th-dust-boy-02') marker_icon = 'th-dust-boy-02';
+                        //                 else if(marker_icon == 'th-dust-boy-03') marker_icon = 'th-dust-boy-03';
+                        //                 else if(marker_icon == 'th-dust-boy-04') marker_icon = 'th-dust-boy-04';
+                        //                 else if(marker_icon == 'th-dust-boy-05') marker_icon = 'th-dust-boy-05';
+                        //             }
+                        //             // $('#popupDetail .card-body .anime img').attr("src", 'https://dev2.cmuccdc.org/template/image/' + marker_icon + '.svg');
+                        //             $('#popupDetail .card-body .anime img').attr("src", 'https://pm2_5.nrct.go.th/template/image/' + marker_icon + '.svg');
+                        //             if(category == 'th-dy'|| category == 'us-dy'){
+                        //                 $('#popupDetail .card-footer .foot_aqi').html("PM<sub>2.5</sub> AQI " + footeraqi);
+                        //                 $('#popupDetail .card-footer .foot_aqi').show();
+                        //             }else{
+                        //                 $('#popupDetail .card-footer .foot_aqi').hide();
+                        //             }
+                        //             $('#popupDetail').show();
+                        //         });
+                        //         }
 
                                 
-                        });
+                        // });
                 });
                 $('.aqi .dropdown-toggle.disabled').removeClass('disabled');
             }
