@@ -99,66 +99,66 @@ $(function () {
                         dustboy_icon = value.us_dustboy_icon;
                         //////////////////////////////////////////////////////////////
                         if($.inArray(parseInt(value.id), ar_indoor) != -1) {
-                        marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
-                            icon: L.divIcon({
-                                className: "custom_marker",
-                                iconSize: [35, 35], 
-                                iconAnchor: [0, 0],
-                                labelAnchor: [-6, 0],
-                                popupAnchor: [17, 0],
-                                html: '<div class="custom_marker slit_in_vertical anime_delay075" style="background-color:rgba(' + color_marker + ')">' + number_title + '</div>'
-                            })
-                        }).addTo(map);
-                        marker.on('click', function (e) {
-                            var lang = Cookies.get("lang_cookie");
-                            //time
-                            if (lang == 'EN') {
-                                moment.locale('en');
-                                var time_date = moment(value.log_datetime).format('ll');
-                                var time_time = moment(value.log_datetime).format('LT');
-                            } else {
-                                moment.locale('th');
-                                var time_date = moment(value.log_datetime).format('ll');
-                                var time_time = moment(value.log_datetime).format('LT') + ' น.';
-                            }
-                            // $('.time').html('<i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time);
-                            // data-toggle="modal" data-target="#exampleModal"
-                            $('.prophecy').html('<a class="float-left" onclick="chart_forcast('+value.id+',\'us\',\''+ value.dustboy_name +'\');" style="color:#fff;"><i class="fas fa-cloud-sun"></i></a>');
-                            $('.time').html('<span class=""><i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time +'</span>');
-                            $('.info').html('<a class="float-right" href="https://www.cmuccdc.org/'+ value.dustboy_uri +'" style="color:#fff;" target="_blank"><i class="fas fa-info-circle"></i></a>');
-                            //lang
-                            if (lang == 'EN') {
-                                $('#popupDetail .card-header p').html(value.dustboy_name_en);
-                                $('#popupDetail .detail_title').html(title_en);
-                            } else {
-                                $('#popupDetail .card-header p').html(value.dustboy_name);
-                                $('#popupDetail .detail_title').html(title);
-                            }
-                            //info-nomal
-                            $('#popupDetail .number_title').html(number_title);
-                            $('#popupDetail .number_footer').html('μg/m<sup>3</sup>');
-                            $('#popupDetail .card-header').css("background-color", "rgba(" + color_marker + ")");
-                            $('#popupDetail .card-body').css("background-color", "rgba(" + color_marker + ")");
-                            $('#popupDetail .card-footer').css("background-color", "rgba(" + color_marker + ")");
-                            // if (category == 'us-hr'||category == 'us-dy') {
-                                if(dustboy_icon == 'us-dust-boy-01') dustboy_icon = 'us-dust-boy-01';
-                                else if(dustboy_icon == 'us-dust-boy-02') dustboy_icon = 'us-dust-boy-02';
-                                else if(dustboy_icon == 'us-dust-boy-03') dustboy_icon = 'us-dust-boy-03';
-                                else if(dustboy_icon == 'us-dust-boy-04') dustboy_icon = 'us-dust-boy-04';
-                                else if(dustboy_icon == 'us-dust-boy-05') dustboy_icon = 'us-dust-boy-05';
-                                else if(dustboy_icon == 'us-dust-boy-06') dustboy_icon = 'us-dust-boy-06';
-                            // }else if(category == 'th-hr'||category == 'th-dy'){
-                            //     if(marker_icon == 'th-dust-boy-01') marker_icon = 'th-dust-boy-01.8da76418';
-                            //     else if(marker_icon == 'th-dust-boy-02') marker_icon = 'th-dust-boy-02.79cc61b5';
-                            //     else if(marker_icon == 'th-dust-boy-03') marker_icon = 'th-dust-boy-03.3c43a928';
-                            //     else if(marker_icon == 'th-dust-boy-04') marker_icon = 'th-dust-boy-04.db9e51ae';
-                            //     else if(marker_icon == 'th-dust-boy-05') marker_icon = 'th-dust-boy-05.363a1424';
-                            // }
-                            // $('#popupDetail .card-body .anime img').attr("src", 'https://dev2.cmuccdc.org/template/image/' + dustboy_icon + '.svg');
-                            $('#popupDetail .card-body .anime img').attr("src", 'https://pm2_5.nrct.go.th/template/image/' + dustboy_icon + '.svg');
-                            $('#popupDetail').show();
-                        });
-                    }
+                            marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
+                                icon: L.divIcon({
+                                    className: "custom_marker",
+                                    iconSize: [35, 35], 
+                                    iconAnchor: [0, 0],
+                                    labelAnchor: [-6, 0],
+                                    popupAnchor: [17, 0],
+                                    html: '<div class="custom_marker slit_in_vertical anime_delay075" style="background-color:rgba(' + color_marker + ')">' + number_title + '</div>'
+                                })
+                            }).addTo(map);
+                            marker.on('click', function (e) {
+                                var lang = Cookies.get("lang_cookie");
+                                //time
+                                if (lang == 'EN') {
+                                    moment.locale('en');
+                                    var time_date = moment(value.log_datetime).format('ll');
+                                    var time_time = moment(value.log_datetime).format('LT');
+                                } else {
+                                    moment.locale('th');
+                                    var time_date = moment(value.log_datetime).format('ll');
+                                    var time_time = moment(value.log_datetime).format('LT') + ' น.';
+                                }
+                                // $('.time').html('<i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time);
+                                // data-toggle="modal" data-target="#exampleModal"
+                                $('.prophecy').html('<a class="float-left" onclick="chart_forcast('+value.id+',\'us\',\''+ value.dustboy_name +'\');" style="color:#fff;"><i class="fas fa-cloud-sun"></i></a>');
+                                $('.time').html('<span class=""><i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time +'</span>');
+                                $('.info').html('<a class="float-right" href="https://www.cmuccdc.org/'+ value.dustboy_uri +'" style="color:#fff;" target="_blank"><i class="fas fa-info-circle"></i></a>');
+                                //lang
+                                if (lang == 'EN') {
+                                    $('#popupDetail .card-header p').html(value.dustboy_name_en);
+                                    $('#popupDetail .detail_title').html(title_en);
+                                } else {
+                                    $('#popupDetail .card-header p').html(value.dustboy_name);
+                                    $('#popupDetail .detail_title').html(title);
+                                }
+                                //info-nomal
+                                $('#popupDetail .number_title').html(number_title);
+                                $('#popupDetail .number_footer').html('μg/m<sup>3</sup>');
+                                $('#popupDetail .card-header').css("background-color", "rgba(" + color_marker + ")");
+                                $('#popupDetail .card-body').css("background-color", "rgba(" + color_marker + ")");
+                                $('#popupDetail .card-footer').css("background-color", "rgba(" + color_marker + ")");
+                                // if (category == 'us-hr'||category == 'us-dy') {
+                                    if(dustboy_icon == 'us-dust-boy-01') dustboy_icon = 'us-dust-boy-01';
+                                    else if(dustboy_icon == 'us-dust-boy-02') dustboy_icon = 'us-dust-boy-02';
+                                    else if(dustboy_icon == 'us-dust-boy-03') dustboy_icon = 'us-dust-boy-03';
+                                    else if(dustboy_icon == 'us-dust-boy-04') dustboy_icon = 'us-dust-boy-04';
+                                    else if(dustboy_icon == 'us-dust-boy-05') dustboy_icon = 'us-dust-boy-05';
+                                    else if(dustboy_icon == 'us-dust-boy-06') dustboy_icon = 'us-dust-boy-06';
+                                // }else if(category == 'th-hr'||category == 'th-dy'){
+                                //     if(marker_icon == 'th-dust-boy-01') marker_icon = 'th-dust-boy-01.8da76418';
+                                //     else if(marker_icon == 'th-dust-boy-02') marker_icon = 'th-dust-boy-02.79cc61b5';
+                                //     else if(marker_icon == 'th-dust-boy-03') marker_icon = 'th-dust-boy-03.3c43a928';
+                                //     else if(marker_icon == 'th-dust-boy-04') marker_icon = 'th-dust-boy-04.db9e51ae';
+                                //     else if(marker_icon == 'th-dust-boy-05') marker_icon = 'th-dust-boy-05.363a1424';
+                                // }
+                                // $('#popupDetail .card-body .anime img').attr("src", 'https://dev2.cmuccdc.org/template/image/' + dustboy_icon + '.svg');
+                                $('#popupDetail .card-body .anime img').attr("src", 'https://pm2_5.nrct.go.th/template/image/' + dustboy_icon + '.svg');
+                                $('#popupDetail').show();
+                            });
+                        }
                         //category
                         $('.aqi .dropdown-item').on('click', function (e) {
                             var category = $(this).attr('data-index');
