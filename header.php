@@ -1,6 +1,6 @@
 <div class="header">
     <div class="logo col-12">
-        <img class="local shadow-drop-bottom mx-1" src="assets/image/<?= $icon; ?>" alt="">
+        <img class="" src="assets/image/<?= $icon; ?>" alt="">
     </div>
     <div class="line d-none d-lg-block"></div>
     <div class="menu col-12 d-none d-lg-flex">
