@@ -67,8 +67,8 @@ $(function () {
         map.getPane('labels').style.zIndex = 650;
         map.getPane('labels').style.pointerEvents = 'none';
         map.setView({
-            lat: 18.7804223,
-            lng: 98.9535746
+            lat: 15.75199675,
+            lng: 99.7891098
         }, zoom_map);
         //Locate
         var lc = L.control.locate({
