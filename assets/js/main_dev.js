@@ -8,7 +8,7 @@ $(function () {
             zoom_map = 8;
         }
         $('.aqi .dropdown-item').on('click', function (e) {
-            console.log('call')
+            
             var data_index = $(this).attr('data-index');
             var name_index = $(this).html();
             $('.aqi .dropdown-toggle').html('<span class="fade_in_ture"> ' + name_index + ' </span>');
@@ -41,9 +41,9 @@ $(function () {
                     $('.cate_th_daily').hide();
                 }
             }
-            $('.aqi .dropdown-item').removeClass('active');
-            $(this).addClass('active');
-            $('#popupDetail').hide();
+            // $('.aqi .dropdown-item').removeClass('active');
+            // $(this).addClass('active');
+            // $('#popupDetail').hide();
         });
         //////////////////////////////////////////////////////////////////////////////////////////////////////////
         var normalMap = L.tileLayer.ThaiProvider('Google.Normal.Map', {
