@@ -1,0 +1,1097 @@
+$base-color: #0c364c 
+$base-color-hover: #0c364c82
+$base-color-hover-border: #0c364c00
+$theme-color: #ac76b7
+$theme-color-hover: #ac76b787
+$theme-color-hover: #ac76b787
+$active_color: #0c364c
+
+@import url('../font/Kanit/stylesheet.css')
+html,body
+    height: 100%
+    font-family: 'kanit', sans-serif
+// bg_us
+.bg_us1_bot
+    background: rgb(180, 213, 108)
+.bg_us1_top
+    background: rgba(180, 213, 108, 0.64)
+.bg_us2_bot
+    background: rgb(252, 242, 118)
+.bg_us2_top
+    background: rgba(252, 242, 118, .64)
+.bg_us3_bot
+    background: rgb(149, 175, 114)
+.bg_us3_top
+    background: rgba(149, 175, 114, .64)
+.bg_us4_bot
+    background: rgb(244, 145, 152)
+.bg_us4_top
+    background: rgba(244, 145, 152, .64)
+.bg_us5_bot
+    background: rgb(223, 182, 214)
+.bg_us5_top
+    background: rgba(223, 182, 214, .64)
+.bg_us6_bot
+    background: rgb(174, 84, 116)
+.bg_us6_top
+    background: rgba(174, 84, 116, .64)
+.text-color
+    color: $base-color
+// custom btn
+.btn.focus, .btn:focus
+    box-shadow: none
+
+// btn_contact
+#btn_contact
+    width: 45px
+    height: 45px
+    position: absolute
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    top: 1.5rem
+    left: 3.5rem
+    cursor: pointer
+    z-index: 100
+    -webkit-transform: rotate(0deg) scale(.6)
+    -moz-transform: rotate(0deg) scale(.6)
+    -o-transform: rotate(0deg) scale(.6)
+    transform: rotate(0deg) scale(.6)
+    -webkit-transition: .75s ease-in-out
+    -moz-transition: .75s ease-in-out
+    -o-transition: .75s ease-in-out
+    transition: .75s ease-in-out
+    span
+        display: block
+        position: absolute
+        height: 12px
+        width: 12px
+        background: $base-color
+        opacity: 1
+        -webkit-transform: rotate(0deg)
+        -moz-transform: rotate(0deg)
+        -o-transform: rotate(0deg)
+        transform: rotate(0deg)
+        -webkit-transition: .5s ease-in-out
+        -moz-transition: .5s ease-in-out
+        -o-transition: .5s ease-in-out
+        transition: .5s ease-in-out
+        &:nth-child(even)
+            left: 50%
+            border-radius: 50%
+
+        &:nth-child(odd)
+            left: 0px
+            border-radius: 50%
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3)
+            top: 0px
+
+        &:nth-child(4), &:nth-child(5), &:nth-child(6)
+            top: 20px
+
+        &:nth-child(7), &:nth-child(8), &:nth-child(9)
+            top: 40px
+
+        &:nth-child(3), &:nth-child(6), &:nth-child(9)
+            left: 100%
+            
+    &.open span
+        background: #ffffff
+        &:nth-child(2)
+            top: 20px
+
+        &:nth-child(5), &:nth-child(6)
+            left: 50%
+
+        &:nth-child(8)
+            top: 20px
+
+section
+    &#main
+        position: relative
+        height: 100vh
+        z-index: 1
+        background: #ffffff
+        padding: 0 4rem
+        overflow-y: hidden
+        .container-fluid
+            padding: 0
+        .header,.main_content
+            display: flex
+            flex-wrap: wrap
+            margin-right: -15px
+            margin-left: -15px
+        .header
+            height: 17vh
+            .logo
+                display: flex
+                // flex-direction: column
+                justify-content: center
+                align-items: center
+                height: 11vh
+                img
+                    width: 175px
+                img.local
+                    width: 75px
+                    border-radius: 50%
+            .line
+                height: 0vh
+                width: 70%
+                border: .75px solid $base-color
+                margin: 0 auto
+            .menu
+                display: flex
+                align-items: center
+                height: auto
+                margin-top: .5rem
+                .main_menu
+                    width: 71%
+                    margin: 0 auto
+                    .nav
+                        .nav-item
+                            .nav-link
+                                font-size: 14px
+                                font-weight: 600
+                                color: $base-color
+                                &:hover
+                                    color: $theme-color
+                            .line_active
+                                width: 50%
+                                border: 1px solid $base-color
+                                margin: 0 auto
+        .main_content
+            height: 79vh
+            .sub_menu
+                display: flex
+                justify-content: space-between
+                align-items: center
+                height: 5vh
+                padding: 0 0 .5rem 0
+                .aqi
+                    width: 70%
+                    font-family: 'Kanit', sans-serif
+                    font-size: .9rem
+                    text-align: right
+                    .btn-group
+                        width: auto
+                        .btn
+                            color: #ffffff
+                            background-color: $base-color
+                            border: none
+                            font-size: .75rem
+                            font-weight: 600
+                            line-height: 1.5
+                            text-transform: uppercase
+                            border-radius: 50rem !important
+                            padding: .25em .65rem .25em 1rem
+                        .dropdown-menu
+                            background-color: $base-color
+                            border: none
+                            font-size: .75rem
+                            color: #ffffff
+                            .dropdown-item
+                                cursor: pointer
+                                text-transform: uppercase
+                                &:hover
+                                    color: #76b7b4
+                                    background-color: $base-color
+                                &:active,&.active
+                                    color: #76b7b4
+                                    background-color: $base-color
+                .lang
+                    width: auto
+                    font-family: 'Kanit', sans-serif
+                    text-align: left
+                    button
+                        color: #fff
+                        background-color: $base-color-hover
+                        border-color: $base-color-hover-border
+                        border-radius: 50rem
+                        font-size: .75rem
+                        text-transform: uppercase
+                        margin: .25rem .1rem
+                        padding: 0 .75rem .1rem .75rem
+                        &:hover
+                            background-color: $base-color
+                            border-color: $base-color
+                        &.active
+                            background-color: $base-color
+                            border-color: $base-color
+                            font-weight: 700
+            .map
+                display: flex
+                justify-content: flex-start
+                height: 74vh
+                border:
+                    top: 3px solid $base-color
+                padding: 0
+                .bg_map
+                    position: absolute
+                    width: 100%
+                    height: 74vh
+                    margin: 0 auto
+                    overflow: hidden
+                    #pm25_map,#us_map
+                        width: 100%
+                        height: 60vh
+                        box-shadow: 0 2px 8px #00000035
+                        .leaflet-control-layers
+                            &.custom-layout
+                                margin-top: 60px
+                            .safety-button
+                                cursor: pointer
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                background-image: none
+                                img
+                                    width: 20px
+                                    height: 20px
+                        .leaflet-control-locate 
+                            &.active.following
+                                a 
+                                    color: #fc8428
+                            a
+                                font-size: .75rem
+                                color: $base-color
+                        .leaflet-bar
+                            border: none
+                            box-shadow: 0 3px 8px #00000059
+                            a
+                                width: 2rem
+                                height: 2rem
+                                line-height: 2rem
+                                font-weight: 600
+                                &:first-child
+                                    border-top-left-radius: 5px
+                                    border-top-right-radius: 5px
+                                &:last-child
+                                    border-bottom-left-radius: 5px
+                                    border-bottom-right-radius: 5px
+                        .leaflet-control-layers
+                            border: none
+                            box-shadow: 0 3px 8px #00000059
+                        path.leaflet-interactive
+                            stroke: $theme-color
+                            stroke-width: 2
+                            fill: $theme-color
+                            fill-opacity: 0.1
+                        path.leaflet-control-locate-circle
+                            stroke: $base-color
+                            stroke-width: 2
+                            fill: $base-color
+                            fill-opacity: 0.2
+                        circle
+                            fill: $base-color !important
+                        .custom_marker
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: 35px
+                            height: 35px
+                            color: #fff
+                            // box-shadow: 0px 0px 5px 0px #afafaf
+                            border-radius: 50%
+                            font-family: 'kanit', sans-serif
+                            font-weight: 600
+                            margin: -2px
+                            img
+                                width: 50%
+                                height: 50%
+                        .safety_marker
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            width: 1.5rem
+                            background: transparent
+                    .pm_aqi
+                        display: flex
+                        flex-wrap: wrap
+                        align-items: center
+                        height: 14vh
+                        font-size: 14px
+                        padding: 1rem 0 1rem 0
+                        .pm,.aqi
+                            position: relative
+                            display: flex
+                            flex-wrap: wrap
+                            flex: 0 0 100%
+                            max-width: 100%
+                            height: 5vh
+                            border: 1px solid #fff
+                            .title_pm_aqi,.detail_pm_aqi
+                                display: flex
+                                align-items: center
+                            .title_pm_aqi
+                                background: $base-color
+                                color: #ffffff
+                                padding-left: 1rem 
+                            .detail_pm_aqi
+                                justify-content: center
+                                font-weight: 600
+                                color: #ffffff
+                                i
+                                    border-radius: 50%
+                                    font-size: 2em
+                                img
+                                    width: 2.5em
+                                    height: 2.5em
+                                    // border-radius: 50%
+                                    // border: 1px solid #ffffff
+                    
+                .card
+                    height: 250px
+                    text-align: center
+                    background: transparent
+                    border: none
+                    margin-top: .5rem
+                    .card-header,.card-body,.card-footer
+                        // display: flex
+                        // // justify-content: center 
+                        // align-items: center
+                        // flex-wrap: wrap
+                    .card-header
+                        text-align: left
+                        border-bottom: none
+                        border-radius: .75rem .75rem 0 0
+                        color: #ffffff
+                        p
+                            width: 95%
+                            font-size: 14px
+                            font-size: 14px
+                            overflow: hidden
+                        .btn-close
+                            position: absolute
+                            top: 0
+                            right: 1.25rem
+                            color: #ffffff
+                            font-size: 20px
+                    .card-body
+                        // justify-content: space-around
+                        padding: .75rem
+                        .anime,.number,.detail
+                            // display: flex
+                        .number
+                            // flex-direction: column
+                            margin-bottom: 1rem
+                            text-align: right
+                            .number_title
+                                color: #ffffff
+                                font-size: 80px
+                                margin-bottom: -1rem
+                            .number_footer
+                                color: #ffffff
+                                font-size: 14px
+                        .anime
+                            margin-bottom: 1rem
+                            img
+                                width: 65px
+                                margin-right: auto
+                        .detail
+                            width: 100%
+                            // flex-direction: column
+                            .detail_title
+                                width: 90%
+                                background: #ffffff63
+                                color: #ffffff
+                                border-radius: 8px
+                                box-shadow: 0 12px 16px 0 rgba(69,91,99,.1) 
+                                font-size: 16px
+                                text-align: center
+                                padding: .25rem
+                                margin: 0rem auto 0.5rem auto
+                            .time
+                                color: #fff
+                                text-align: center
+                                font-size: 14px
+                        .table
+                            font-size: 12px
+                            margin-top: 1rem
+                            td,th
+                                vertical-align: middle
+                                &.detail_safety
+                                    height: 110px
+                                    padding-left: 1.75rem
+                                    .over
+                                        height: 110px
+                                        overflow-y: auto
+                                        margin-bottom: 0
+                                    
+                    .card-footer
+                        // justify-content: space-between
+                        border-radius: 0 0 .75rem .75rem
+                        color: #ffffff
+                        font-size: 12px
+                        padding: .5rem 1rem
+                        .weahter
+                            text-align: left
+                            .text
+                                font-size: 12px
+                            .prophecy
+                                cursor: pointer
+                                font-size: .9rem
+                                width: fit-content
+                                height: 100%
+                        .favorite 
+                            text-align: right
+                            .time
+                                font-size: .9rem
+                            .info
+                                font-size: .9rem
+        .page_views
+            position: fixed
+            bottom: 18vh
+            right: 0
+            background: $base-color         
+            font-size: 12px
+            border-top-left-radius: 25px
+            border-bottom-left-radius: 25px
+            padding: .375rem 1rem
+            vertical-align: middle
+            transform: translateX(135px)
+            transition: transform 1s
+            span
+                text-align: center
+                font-weight: 600
+                margin: 0 0 0 1rem
+            &:hover
+                background: $base-color         
+                transform: translateX(0)
+    &#contact
+        // display: none
+        position: fixed
+        top: 0
+        width: 100%
+        height: 100vh
+        z-index: 0
+        background: $theme-color
+        .logo_contact,.menu_contact,.footer
+            display: flex
+            justify-content: center
+            align-items: center
+        .logo_contact
+            height: 95vh
+            img
+                width: 500px
+            img.local_contact
+                width: 250px
+                border-radius: 50%
+        .menu_contact
+            height: 70vh
+            .contact
+                align-self: center
+                .ul_contact
+                    color: #ffffff
+                    .li_contact
+                        line-height: 2em
+                a
+                    color: #ffffff
+                    &:hover
+                        color: #9dc02d
+                        text-decoration: none
+                .contact_us
+                    font-size: 1.5rem
+                    span
+                        font-size: 1rem
+                        a
+                            transition: .5s ease-in-out
+                            &:hover
+                                color: $base_color
+                                text-decoration: none 
+                .group_icon
+                    display: flex
+                    align-items: center
+                    a.icon
+                        width: 50px
+                        height: 50.72px
+                        background: #ffffff
+                        border-radius: 50%
+                        padding: .75rem .75rem
+                        text-align: center
+                        transition: .5s ease-in-out
+                        svg g g
+                            fill: $theme-color
+                        i
+                            width: 26px
+                            color: $theme-color
+                            font-size: 26px
+                        &:hover
+                            background: $base-color
+                            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.35)
+                            transform: translateY(-.25rem)
+                            svg g g
+                                fill: #ffffff
+                            i
+                                width: 26px
+                                color: #ffffff
+                                font-size: 26px
+            .menu_min
+                align-self: flex-start
+                .nav
+                    .nav-item
+                        .nav-link
+                            font-weight: 600
+                            color: #ffffff
+                            &:hover
+                                color: $base-color
+                        .line_active
+                            width: 50%
+                            border: .5px solid #ffffff
+                            margin: 0 auto
+footer
+    width: 100%
+    position: fixed
+    bottom: 0
+    z-index: 999
+    background: $theme-color        
+    color: #ffffff   
+    text-align: center
+    font-size: 12px
+    padding: .5rem 4rem
+
+.prophecy-modal
+    z-index: 1071 !important
+    .modal-dialog
+        .modal-content
+            height: auto
+            text-align: center
+            // background: $theme-color
+            border: none
+            margin-top: .5rem
+            .modal-header
+                text-align: left
+                border-bottom: none
+                border-radius: .75rem .75rem 0 0
+                color: $base-color
+                p
+                    width: 95%
+                    font-size: 1.25rem
+                    font-weight: 600
+                    overflow: hidden
+                    padding-left: .5rem
+                .close
+                    &:focus
+                        outline: 0
+            .modal-body_forecast
+                padding: 0 1rem 1rem 1rem
+                .card_forecast
+                    background-color: #f8f9fa
+                    border: none
+                    border-radius: .75rem
+                    text-align: center
+                    padding: 1rem
+                    margin: .75rem 0
+                    box-shadow: 0 12px 16px 0 #455b631a
+                    .anime_forecast
+                        width: 8vw
+                        border-radius: 50%
+                        margin: .5rem 0
+                        box-shadow: 0 12px 16px 0 #455b631a
+                    .date_forecast
+                        color: #ffffff //$base-color
+                        font-size: 1rem
+                        font-weight: 400
+                        text-align: center
+                        padding-top: .5rem
+                        margin-bottom: .5rem
+                    .pm25_forecast
+                        background: #ffffff63
+                        color: #ffffff
+                        font-size: 1rem
+                        font-weight: 400
+                        text-align: center
+                        border-radius: 0.5rem
+                        padding: .25rem 2rem
+                        margin-bottom: .5rem
+                        box-shadow: 0 12px 16px 0 #455b631a
+                        b
+                            font-size: 1.5rem
+                        small
+                            font-weight: 300
+
+                    .detail_forecast
+                        color: #ffffff //$base-color
+                        font-size:  .75em
+                        font-weight: 300
+                        text-align: center
+                        padding-top: .5rem
+                        margin-bottom: .5rem
+                    .chart
+                        display: flex
+                        justify-content: center
+                        max-width: 47vw
+                        max-height: 25vh
+                        color: #ffffff
+                        border-radius: 15px
+                        margin: 1rem 0
+                        canvas
+                            max-width: 47vw
+                            max-height: 25vh
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px)
+    body
+        overflow: hidden
+    #btn_contact
+        top: .5rem
+        left: .5rem
+    section
+        &#main
+            // height: 200vh
+            padding: 0 .5rem
+            overflow-x: hidden
+            .container-fluid
+                padding: 0 15px 0 15px
+            .header
+                height: 10vh
+                .logo
+                    // margin: 1rem 0 1rem 1.5rem
+                    img
+                        width: 150px
+                    img.local
+                        width: 20%
+                .menu
+                    height: auto
+                    flex-wrap: wrap
+                    margin: 
+                        top: 1rem
+                    .main_menu
+                        flex: 0 0 100%
+                        max-width: 100%
+                        .nav-item
+                            width: 100%
+                            text-align: center
+                            .line_active
+                                width: 30% !important
+            .main_content
+                .sub_menu
+                    height: auto
+                    flex-wrap: wrap
+                    margin: 0
+                    .aqi
+                        flex: 0 0 50%
+                        max-width: 50%
+                        font-size: 0.75rem
+                        .dropdown-toggle
+                            transition: .5s 
+                    .lang
+                        flex: 0 0 50%
+                        max-width: 50%
+                        button
+                            font-size: 0.7rem
+                .map
+                    // height: 176.75vh
+                    .bg_map
+                        height: auto
+                        #us_map
+                            height: 63vh
+                        .pm_aqi
+                            .pm,.aqi
+                                // height: 3rem
+                                .title_pm_aqi,.detail_pm_aqi
+                                    display: flex
+                                    justify-content: center
+                                    align-items: center
+                                    padding: 0
+                                .title_pm_aqi
+                                    height: 100%
+                                    font-size: .5em
+                                    // padding-left: 1rem 
+                                .detail_pm_aqi
+                                    height: 100%
+                                    font-size: 10px
+                       
+                    .card
+                        .card-header
+                            justify-content: space-between
+                            font-size: 13px
+                            padding: .75rem 1rem 0 1rem
+                        .card-body
+                            flex-direction: column
+                            padding: 0 1.25rem 0 1.25rem
+                            .number
+                                text-align: center
+                                margin-bottom: .5rem
+                                .number_title
+                                    font-size: 6rem
+                                    // margin-bottom: -.5rem
+                                    margin-top: -1.5rem
+                            .detail
+                                margin-bottom: .5rem
+                                .detail_title
+                                    width: 100%
+                                    font-size: 13px
+                                .time
+                                    font-size: 11px
+                        .card-footer
+                            justify-content: center
+                            .weahter 
+                                text-align: center
+                            .favorite
+                                text-align: center
+                            .text
+                                font-size: 12px !important
+
+        &#contact
+            position: absolute
+            // height: 100%
+            .logo_contact
+                height: auto
+                margin-top: .25rem
+                img
+                    width: 150px
+                img.local_contact
+                    width: 20%
+            .menu_contact
+                height: auto
+                margin-bottom: 2rem
+                font-size: .8rem
+                flex-wrap: wrap
+                .menu_min
+                    margin-top: 1rem
+                    .nav
+                        width: 100%
+                        text-align: left !important
+                        // padding-left: 3rem
+                        .nav-item
+                            text-align: center
+                            .nav-link
+                                font-weight: 600
+                                color: #ffffff
+                                &:hover
+                                    color: $base_color
+                                &.active
+                                    color: $active_color
+                .line
+                    width: 100%
+                    border: .5px solid #ffffff
+                .contact
+                    text-align: center
+                    // margin-top: 1rem 
+                    .contact_us
+                        font-size: 24px
+                    .group_icon 
+                        justify-content: center
+                    img
+                        width: 150px
+                    img.local_contact
+                        width: 53px
+                        height: 53.72px
+                        border-radius: 50%
+                        
+    footer
+        font-size: 10px
+        padding: .5rem 0rem
+    
+    .prophecy-modal
+        .modal-header
+            p
+                font-size: 1rem !important
+        .anime_forecast
+            width: 100% !important
+        .date_forecast
+            font-size: .75rem !important
+        .pm25_forecast
+            font-size: .75rem !important
+            padding: .25rem 1rem !important
+            b
+                font-size: 1rem !important
+        .detail_forecast
+            font-size: .75rem !important
+         
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px)
+    body
+        height: auto
+    #btn_contact
+        top: 1rem
+        left: 2.75rem
+    section
+        &#main
+            height: auto
+            overflow-y: auto
+            .header
+                height: 25vh   
+                .logo
+                    height: auto
+            .main_content
+                height: auto
+                .sub_menu 
+                    height: auto
+                    .aqi
+                        width: auto
+                    .lang
+                        width: auto
+                .map
+                    height: 120vh
+                    .bg_map
+                        height: auto
+                        #us_map
+                            height: 80vh
+                        .pm_aqi
+                            height: auto
+                            .pm
+                                height: 10vh
+                            .aqi
+                                height: 10vh
+                    .card 
+                        height: 200px;
+                        .card-body
+                            padding: 0rem .75rem .75rem .75rem 
+                            .number
+                                text-align: center
+                                .number_title
+                                    font-size: 3.5rem
+                                    margin-bottom: -.5rem
+                            .detail 
+                                .detail_title
+                                    font-size: 14px
+                        .card-footer
+                            .weahter 
+                                text-align: center
+                            .favorite
+                                text-align: center
+        &#contact
+            position: absolute
+            height: 150vh
+            .logo_contact
+                height: auto
+                img
+                    width: 150px
+                img.local_contact
+                    width: 20%
+            .menu_contact
+                height: auto
+                margin-bottom: 2rem
+                font-size: .8rem
+                flex-wrap: wrap
+                .menu_min
+                    margin-top: 1rem
+                    .nav
+                        width: 100%
+                        text-align: left !important
+                        // padding-left: 3rem
+                        .nav-item
+                            text-align: center
+                            .nav-link
+                                font-weight: 600
+                                color: #ffffff
+                                &:hover
+                                    color: $base_color
+                                &.active
+                                    color: $active_color
+                .line
+                    width: 100%
+                    border: .5px solid #ffffff
+                .contact
+                    text-align: center
+                    margin-top: 1rem 
+                    .contact_us
+                        font-size: 24px
+                    .group_icon 
+                        justify-content: center
+                    
+            .footer
+                // position: absolute
+                bottom: 0
+                height: auto
+    footer
+        padding: .5rem 1.5rem
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px)
+    body
+        overflow: hidden
+    #btn_contact
+        top: 2rem
+        left: 3rem
+    section
+        &#main
+            .header
+                height: 15vh   
+                .logo
+                    height: auto
+            .main_content
+                height: auto
+                .sub_menu
+                    height: auto
+                    .aqi
+                        width: auto
+                    .lang
+                        width: auto
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px)
+    .col-lg-custom
+        flex: 0 0 27%
+        max-width: 27%
+
+//anime
+.anime_delay025
+    animation-delay: .25s !important
+.anime_delay05
+    animation-delay: .5s !important
+.anime_delay075
+    animation-delay: .75s !important
+.anime_delay1
+    animation-delay: 1s !important
+.anime_delay125
+    animation-delay: 1.25s !important
+.anime_delay15
+    animation-delay: 1.5s !important
+.anime_delay175
+    animation-delay: 1.75s !important
+.anime_delay2
+    animation-delay: 2s !important
+.anime_delay3
+    animation-delay: 3s !important
+.anime_delay4
+    animation-delay: 4s !important
+.anime_delay5
+    animation-delay: 5s !important
+.fade_in
+    animation: fade_in .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+.fade_out
+    animation: fade_out .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+.fade_in_ture
+    animation: fade_in_ture .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+.fade_out_ture
+    animation: fade_out_ture .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+.slide_in_left
+    animation: slide_in_left .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+.slide_in_right
+    animation: slide_in_right .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+.slit_in_vertical 
+    animation: slit_in_vertical_marker 0.5s ease-out both
+.slit_in_vertical_s
+    animation: slit_in_vertical 0.5s ease-out both
+.slit_out_vertical 
+    animation: slit_out_vertical 0.5s ease-out both
+.shadow-drop-bottom 
+    animation: shadow-drop-bottom 0.6s both
+.swing-in-top-fwd 
+    animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both
+.shadow-drop-bottom-sub_menu
+    animation: shadow-drop-bottom-sub_menu 0.6s both
+.text-shadow-drop-bottom 
+    animation: text-shadow-drop-bottom 1.75s ease-in-out both
+.text-shadow-drop-bottom-icon 
+    animation: text-shadow-drop-bottom-icon 1.75s ease-in-out both
+.shadow-drop-bottom-icon 
+    animation: shadow-drop-bottom-icon 1.75s ease-in-out both
+
+@keyframes fade_in
+    0%  
+        opacity: 0
+        z-index: 0
+    100%    
+        opacity: 1
+        z-index: 1
+@keyframes fade_out
+    0%  
+        opacity: 1
+        z-index: 1
+    100%    
+        opacity: 0
+        z-index: 0
+@keyframes fade_in_ture
+    0%  
+        opacity: 0
+    100%    
+        opacity: 1
+@keyframes fade_out_ture
+    0%  
+        opacity: 1
+    100%    
+        opacity: 0
+@keyframes slide_in_left
+    0%
+        transform: translateX(-1000px)
+        opacity: 0
+    100% 
+        transform: translateX(0)
+        opacity: 1
+@keyframes slide_in_right
+    0%
+        transform: translateX(1000px)
+        opacity: 0
+    100% 
+        transform: translateX(0)
+        opacity: 1
+@keyframes slit_in_vertical
+    0% 
+        transform: translateZ(-800px) rotateY(90deg)
+        opacity: 0
+        z-index: 0
+    54% 
+        transform: translateZ(-160px) rotateY(87deg)
+        opacity: 1
+        z-index: 1
+    100% 
+        transform: translateZ(0) rotateY(0)
+@keyframes slit_in_vertical_marker
+    0% 
+        box-shadow: 0px 0px 0px 0px #afafaf
+        transform: translateZ(-800px) rotateY(90deg)
+        opacity: 0
+        z-index: 0
+    54% 
+        box-shadow: 0px 0px 0px 0px #afafaf
+        transform: translateZ(-160px) rotateY(87deg)
+        opacity: 1
+        z-index: 1
+    100% 
+        box-shadow: 0px 0px 5px 0px #858585
+        transform: translateZ(0) rotateY(0)
+@keyframes slit_out_vertical  
+    0% 
+        transform: translateZ(0) rotateY(0)
+        opacity: 1
+        z-index: 1
+    54% 
+        transform: translateZ(-160px) rotateY(87deg)
+        opacity: 1
+        z-index: 1
+    100% 
+        transform: translateZ(-800px) rotateY(90deg)
+        opacity: 0
+        z-index: 0
+@keyframes shadow-drop-bottom
+    0% 
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0)
+    100% 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35)
+@keyframes swing-in-top-fwd 
+    0% 
+        transform: rotateX(-100deg)
+        transform-origin: top
+        opacity: 0
+    100% 
+        transform: rotateX(0deg)
+        transform-origin: top
+        opacity: 1
+@keyframes shadow-drop-bottom-sub_menu
+    0% 
+        box-shadow: 0 0 0 #000000
+    100% 
+        box-shadow: 0 3px 8px #00000059
+@keyframes text-shadow-drop-bottom 
+    0% 
+        color: $base-color
+        text-shadow: 0 0 0 #00000000
+    100% 
+        color: #ffffff
+        text-shadow: 0 6px 18px #00000059
+@keyframes text-shadow-drop-bottom-icon 
+    0% 
+        color: $base-color
+        text-shadow: 0 0 0 #00000000
+    100% 
+        color: #ffffff
+        text-shadow: 0 6px 18px #00000059
+@keyframes shadow-drop-bottom-icon 
+    0% 
+        box-shadow: 0 0 0 #00000000
+    100% 
+        box-shadow: 0 6px 14px #00000059
+

@@ -1,0 +1,1 @@
+<i class="fas fa-users"></i> <span>Users : 1,099</span> | <i class="far fa-eye"></i> <span>Sessions : 5,316</span>

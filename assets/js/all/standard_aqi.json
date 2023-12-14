@@ -1,0 +1,142 @@
+[{
+    "us_aqi": {
+        "pm25": [{
+                "min": "0",
+                "max": "12",
+                "color": "0, 153, 107",
+                "dustboy_icon": "us-dust-boy-01.svg"
+            },
+            {
+                "min": "13",
+                "max": "35",
+                "color": "253,192,78",
+                "dustboy_icon": "us-dust-boy-02.svg"
+            },
+            {
+                "min": "36",
+                "max": "55",
+                "color": "235, 132, 63",
+                "dustboy_icon": "us-dust-boy-03.svg"
+            },
+            {
+                "min": "56",
+                "max": "150",
+                "color": "205,0,0",
+                "dustboy_icon": "us-dust-boy-04.svg"
+            },
+            {
+                "min": "151",
+                "max": "250",
+                "color": "129, 21, 185",
+                "dustboy_icon": "us-dust-boy-05.svg"
+            },
+            {
+                "min": "251",
+                "max": "500",
+                "color": "160, 7, 54",
+                "dustboy_icon": "us-dust-boy-06.svg"
+            }
+        ],
+        "aqi": [{
+                "min": "0",
+                "max": "50",
+                "color": "0, 153, 107",
+                "dustboy_icon": "us-dust-boy-01.svg"
+            },
+            {
+                "min": "51",
+                "max": "100",
+                "color": "253,192,78",
+                "dustboy_icon": "us-dust-boy-02.svg"
+            },
+            {
+                "min": "101",
+                "max": "150",
+                "color": "235, 132, 63",
+                "dustboy_icon": "us-dust-boy-03.svg"
+            },
+            {
+                "min": "151",
+                "max": "200",
+                "color": "205,0,0",
+                "dustboy_icon": "us-dust-boy-04.svg"
+            },
+            {
+                "min": "201",
+                "max": "300",
+                "color": "129, 21, 185",
+                "dustboy_icon": "us-dust-boy-05.svg"
+            },
+            {
+                "min": "300",
+                "max": "500",
+                "color": "160, 7, 54",
+                "dustboy_icon": "us-dust-boy-06.svg"
+            }
+        ]
+    },
+    "th_aqi": {
+        "pm25": [{
+                "min": "0",
+                "max": "15.0",
+                "color": "0,191,243",
+                "dustboy_icon": "th-dust-boy-01.svg"
+            },
+            {
+                "min": "15.1",
+                "max": "25.0",
+                "color": "0,166,81",
+                "dustboy_icon": "th-dust-boy-02.svg"
+            },
+            {
+                "min": "25.1",
+                "max": "37.5",
+                "color": "253,192,78",
+                "dustboy_icon": "th-dust-boy-03.svg"
+            },
+            {
+                "min": "37.6",
+                "max": "75.0",
+                "color": "242,101,34",
+                "dustboy_icon": "th-dust-boy-04.svg"
+            },
+            {
+                "min": "75.1",
+                "max": "999",
+                "color": "205,0,0",
+                "dustboy_icon": "th-dust-boy-05.svg"
+            }
+        ],
+        "aqi": [{
+                "min": "0",
+                "max": "25",
+                "color": "0,191,243",
+                "dustboy_icon": "th-dust-boy-01.svg"
+            },
+            {
+                "min": "26",
+                "max": "50",
+                "color": "0,166,81",
+                "dustboy_icon": "th-dust-boy-02.svg"
+            },
+            {
+                "min": "51",
+                "max": "100",
+                "color": "253,192,78",
+                "dustboy_icon": "th-dust-boy-03.svg"
+            },
+            {
+                "min": "101",
+                "max": "200",
+                "color": "242,101,34",
+                "dustboy_icon": "th-dust-boy-04.svg"
+            },
+            {
+                "min": "201",
+                "max": "999",
+                "color": "205,0,0",
+                "dustboy_icon": "th-dust-boy-05.svg"
+            }
+        ]
+    }
+}]
