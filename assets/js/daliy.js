@@ -106,7 +106,11 @@ $(function () {
                         },{
                             targets: 1,
                             createdCell: function (td, cellData, rowData, row, col) {
-                                var valpm25 = rowData.pm25 > 0 ? rowData.pm25 : '';
+                                if(rowData.pm25 > 0){
+                                    var valpm25 = rowData.pm25;
+                                }else{
+                                    var valpm25 = '';
+                                }
                                 $(td).html('<a class="font-weight-bold p-1" style="width: 4vw; font-size:14px;"> ' + valpm25 + ' </a>');
                                 $(td).addClass('text-center');
                             }
