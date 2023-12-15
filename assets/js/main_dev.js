@@ -163,6 +163,7 @@ $(function () {
                         $('.aqi .dropdown-item').on('click', function (e) {
                             var category = $(this).attr('data-index');
                                 var number_title,footeraqi;
+                                console.log(category);
                                 //hr/dy
                                 if(category == 'th-hr'|| category == 'us-hr'){
                                     number_title = Math.floor(parseFloat(value.pm25));
