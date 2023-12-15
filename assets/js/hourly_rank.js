@@ -105,7 +105,7 @@ $(function () {
                             targets: 1,
                             createdCell: function (td, cellData, rowData, row, col) {
                                 var color_table = index =='us' ? rowData.us_color : rowData.th_color;
-                                $(td).html('<a class="font-weight-bold badge badge-pill p-1 w-sm slit_in_vertical_table" style="width: 4vw; font-size:14px; background-color:rgba(' + color_table + ')";> ' + rowData.pm25 + ' </a>');
+                                $(td).html('<a class="font-weight-bold badge badge-pill p-1 w-sm slit_in_vertical_table" style="width: 4vw; font-size:14px; background-color:rgba(' + color_table + ')";> ' + rowData.pm25!=0 ? rowData.pm25:'Offline'+ ' </a>');
                                 $(td).addClass('text-center');
                             }
                         }
