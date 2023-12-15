@@ -163,7 +163,7 @@ $(function () {
                         $('.aqi .dropdown-item').on('click', function (e) {
                             var category = $(this).attr('data-index');
                                 var number_title,footeraqi;
-                               
+                                
                                 //hr/dy
                                 if(category == 'th-hr'|| category == 'us-hr'){
                                     number_title = Math.floor(parseFloat(value.pm25));
@@ -207,10 +207,10 @@ $(function () {
                                             })
                                         }).addTo(map);
                                     }
-                                    else
+                                    else if(category=='th-dy'||category=='us-dy')
                                     {
-                                        if(value.source_name == 'DustBoy')
-                                        {
+                                        // if(value.source_name == 'DustBoy')
+                                        // {
                                             marker = L.marker([value.dustboy_lat, value.dustboy_lon], {
                                                 icon: L.divIcon({
                                                     className: "custom_marker",
@@ -221,11 +221,8 @@ $(function () {
                                                     html: '<div class="custom_marker slit_in_vertical" style="background-color:rgba(' + marker_color + ')">' + number_title + '</div>'
                                                 })
                                             }).addTo(map);
-                                        }
+                                        // }
                                     }
-
-                                    console.log(category);
-                                    console.log(number_title);
                                     marker.on('click', function (e) {
                                         var lang = Cookies.get("lang_cookie");
                                         //pm2.5/TH AQI
