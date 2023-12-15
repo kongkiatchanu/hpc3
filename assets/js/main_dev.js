@@ -163,7 +163,7 @@ $(function () {
                         $('.aqi .dropdown-item').on('click', function (e) {
                             var category = $(this).attr('data-index');
                                 var number_title,footeraqi;
-                                console.log(category);
+                               
                                 //hr/dy
                                 if(category == 'th-hr'|| category == 'us-hr'){
                                     number_title = Math.floor(parseFloat(value.pm25));
@@ -223,6 +223,9 @@ $(function () {
                                             }).addTo(map);
                                         }
                                     }
+
+                                    console.log(category);
+                                    console.log(number_title);
                                     marker.on('click', function (e) {
                                         var lang = Cookies.get("lang_cookie");
                                         //pm2.5/TH AQI
