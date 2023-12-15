@@ -207,7 +207,7 @@ $(function () {
                                             })
                                         }).addTo(map);
                                     }
-                                    else if(category=='th-dy'||category=='us-dy')
+                                    else
                                     {
                                         if(value.source_name == 'DustBoy')
                                         {
