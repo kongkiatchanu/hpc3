@@ -83,7 +83,7 @@ $(function () {
         }).addTo(map);
 
         const ar_indoor = [5569, 5570, 5571, 5572, 5573, 6436, 6438 , 6439, 6440, 6441, 6442, 6443, 6444, 6445, 6446, 6447, 6448, 6307, 6308, 6309, 6311, 6312, 6313, 6314, 6316, 6317, 6318, 6319, 6320, 6449, 6450, 6451, 6453, 6455, 6456, 6457, 6458, 6460, 6461, 6462, 6463, 6464, 6466, 6467, 6322, 6323, 6324, 6325, 6326, 6327, 6327, 6329, 6330, 6331];
-        $.getJSON("https://www-old.cmuccdc.org/api2/dustboy/dustboystations?v=1", function (db) {
+        $.getJSON("https://www-old.cmuccdc.org/api2/dustboy/hpc3", function (db) {
             if (db) {
                 $.each(db, function (index, value) {
                     // if(value.source_name=='DustBoy'){
