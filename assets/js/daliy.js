@@ -7,7 +7,7 @@ $(function () {
         var data_index = $('.cate_aqi .dropdown-item.active').attr('data-index');
         var url;
         if (data_category == '2') {
-            url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3';
+            url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3_stations';
         } else {
             url = 'https://www-old.cmuccdc.org/api2/dustboy/dustboystations?v=1';
         }
@@ -25,7 +25,7 @@ $(function () {
         var data_category =$('#main .main_detail .category button.active').attr('data-category');
         var url;
         if (data_category == '2') {
-            url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3';
+            url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3_stations';
         }else{
             url = 'https://www-old.cmuccdc.org/api2/dustboy/dustboystations?v=1';
         }
@@ -52,7 +52,7 @@ $(function () {
     function getjson(url,index) {
         var data_url;
         if (!url) {
-            data_url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3';
+            data_url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3_stations';
         } else {
             data_url = url;
         }
@@ -106,14 +106,19 @@ $(function () {
                         },{
                             targets: 1,
                             createdCell: function (td, cellData, rowData, row, col) {
-                                $(td).html('<a class="font-weight-bold p-1" style="width: 4vw; font-size:14px;"> ' + rowData.daily_pm25 + ' </a>');
+                                var valpm25 = rowData.pm25 > 0 ? rowData.pm25 : '';
+                                $(td).html('<a class="font-weight-bold p-1" style="width: 4vw; font-size:14px;"> ' + valpm25 + ' </a>');
                                 $(td).addClass('text-center');
                             }
                         },{
                             targets: 2,
                             createdCell: function (td, cellData, rowData, row, col) {
                                 var color_table = index =='us' ? rowData.daily_us_color : rowData.daily_th_color;
-                                var value_aqi = index =='us' ? rowData.daily_pm25_us_aqi : rowData.daily_pm25_th_aqi;
+                                if(rowData.daily_pm25>0){
+                                    var value_aqi = index =='us' ? rowData.daily_pm25_us_aqi : rowData.daily_pm25_th_aqi;
+                                }else{
+                                    var value_aqi = 'Offline';
+                                }
                                 $(td).html('<a class="font-weight-bold badge badge-pill p-1 w-sm slit_in_vertical_table" style="width: 4vw; font-size:14px; background-color:rgba(' + color_table + ')";> ' + value_aqi + ' </a>');
                                 $(td).addClass('text-center');
                             }
