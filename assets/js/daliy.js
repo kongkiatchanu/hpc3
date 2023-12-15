@@ -106,8 +106,8 @@ $(function () {
                         },{
                             targets: 1,
                             createdCell: function (td, cellData, rowData, row, col) {
-                                if(rowData.pm25 > 0){
-                                    var valpm25 = rowData.pm25;
+                                if(rowData.daily_pm25 > 0){
+                                    var valpm25 = rowData.daily_pm25;
                                 }else{
                                     var valpm25 = '';
                                 }
