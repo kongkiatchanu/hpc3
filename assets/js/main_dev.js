@@ -123,7 +123,7 @@ $(function () {
                                 }
                                 // $('.time').html('<i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time);
                                 // data-toggle="modal" data-target="#exampleModal"
-                                $('.prophecy').html('<a class="float-left" onclick="chart_forcast('+value.id+',\'us\',\''+ value.dustboy_name +'\');" style="color:#fff;"><i class="fas fa-cloud-sun"></i></a>');
+                                // $('.prophecy').html('<a class="float-left" onclick="chart_forcast('+value.id+',\'us\',\''+ value.dustboy_name +'\');" style="color:#fff;"><i class="fas fa-cloud-sun"></i></a>');
                                 $('.time').html('<span class=""><i class="far fa-calendar-alt"></i> ' + time_date + ' | <i class="far fa-clock"></i> ' + time_time +'</span>');
                                 $('.info').html('<a class="float-right" href="https://www.cmuccdc.org/'+ value.dustboy_uri +'" style="color:#fff;" target="_blank"><i class="fas fa-info-circle"></i></a>');
                                 //lang
