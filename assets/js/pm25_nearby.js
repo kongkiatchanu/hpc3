@@ -70,7 +70,7 @@ $(function () {
             var data_index = $('.cate_aqi .dropdown-item.active').attr('data-index');
             var url;
             if (data_category == '2') {
-                url = 'https://www-old.cmuccdc.org/api2/dustboy/cmu?v=1';
+                url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3?v=1';
             } else {
                 url = 'https://www-old.cmuccdc.org/api2/dustboy/dustboystations?v=1';
             }
@@ -88,7 +88,7 @@ $(function () {
             var data_category = $('#main .main_detail .category button.active').attr('data-category');
             var url;
             if (data_category == '2') {
-                url = 'https://www-old.cmuccdc.org/api2/dustboy/cmu?v=1';
+                url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3?v=1';
             } else {
                 url = 'https://www-old.cmuccdc.org/api2/dustboy/dustboystations?v=1';
             }
@@ -129,7 +129,7 @@ $(function () {
         function getjson(url, index) {
             var data_url;
             if (!url) {
-                data_url = 'https://www-old.cmuccdc.org/api2/dustboy/cmu?v=1';
+                data_url = 'https://www-old.cmuccdc.org/api2/dustboy/hpc3?v=1';
             } else {
                 data_url = url;
             }
