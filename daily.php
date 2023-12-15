@@ -73,9 +73,9 @@
                                 </div>
                                 <div class="col-8 text-right col-sm-6">
                                     <div class="category">
-                                        <span class="d-none d-sm-inline-block">ประเภท : </span>
+                                        <span class="d-none d-sm-inline-block">จุดตรวจวัด : </span>
                                         <button class="btn btn-category1" data-category='1' lang_th="ทั้งหมด" lang_en="All">ทั้งหมด</button>
-                                        <button class="btn btn-category2 active" data-category='2' lang_th="มหาวิทยาลัยเชียงใหม่" lang_en="Chiang Mai University">มหาวิทยาลัยเชียงใหม่</button>
+                                        <button class="btn btn-category2 active" data-category='2' lang_th="ศูนย์อนามัยที่ 3" lang_en="HPC3">ศูนย์อนามัยที่ 3</button>
                                     </div>
                                 </div>
                             </div>
