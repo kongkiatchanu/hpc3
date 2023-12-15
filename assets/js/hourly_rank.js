@@ -1,4 +1,8 @@
 $(function () {
+    var all_station = {};
+    $.getJSON('https://www-old.cmuccdc.org/api2/dustboy/hpc3_stations', function (db) {
+        all_station = db;
+    });
     $('.spinkit-loading').removeClass('d-none');
     $('.spinkit-loading').addClass('d-flex');
     getjson(null,'us');
@@ -57,6 +61,7 @@ $(function () {
         }
         $.getJSON(data_url, function (db) {
             if (db) {
+                console.log(all_station);
                 var table = $('#table_pm25_nearby').DataTable();
                 var lang = Cookies.get("lang_cookie");
                 if (lang == 'EN') {
@@ -103,7 +108,7 @@ $(function () {
                             targets: 1,
                             createdCell: function (td, cellData, rowData, row, col) {
                                 var color_table = index =='us' ? rowData.us_color : rowData.th_color;
-                                $(td).html('<a class="font-weight-bold badge badge-pill p-1 w-sm slit_in_vertical_table" style="width: 4vw; font-size:14px; background-color:rgba(' + color_table + ')";>  </a>');
+                                $(td).html('<a class="font-weight-bold badge badge-pill p-1 w-sm slit_in_vertical_table" style="width: 4vw; font-size:14px; background-color:rgba(' + color_table + ')";> ' + rowData.pm25 + ' </a>');
                                 $(td).addClass('text-center');
                             }
                         }
